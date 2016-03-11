@@ -20,9 +20,15 @@
 *.lai
 *.la
 *.a
-*.lib
 
 # Executables
 *.exe
 *.out
 *.app
+
+#Folders
+bin/
+x64/
+
+#VS
+*.sdf
