@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LIBRAS.CyberGlove", "LIBRAS.CyberGlove", "{D327BC59-D50C-44ED-8EBF-0944B8A781AF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GetGloveData", "LIBRAS.CyberGlove\GetGloveData\GetGloveData.vcxproj", "{713C67A7-B1E2-4953-8BC3-0549B2C04030}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MakeAGesture", "LIBRAS.CyberGlove\MakeAGesture\MakeAGesture.vcxproj", "{BDCE0AC5-B738-4900-8AA8-C2AD57EC47CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{713C67A7-B1E2-4953-8BC3-0549B2C04030}.Debug|Win32.ActiveCfg = Debug|Win32
+		{713C67A7-B1E2-4953-8BC3-0549B2C04030}.Debug|Win32.Build.0 = Debug|Win32
+		{713C67A7-B1E2-4953-8BC3-0549B2C04030}.Debug|x64.ActiveCfg = Debug|x64
+		{713C67A7-B1E2-4953-8BC3-0549B2C04030}.Debug|x64.Build.0 = Debug|x64
+		{713C67A7-B1E2-4953-8BC3-0549B2C04030}.Release|Win32.ActiveCfg = Release|Win32
+		{713C67A7-B1E2-4953-8BC3-0549B2C04030}.Release|Win32.Build.0 = Release|Win32
+		{713C67A7-B1E2-4953-8BC3-0549B2C04030}.Release|x64.ActiveCfg = Release|x64
+		{713C67A7-B1E2-4953-8BC3-0549B2C04030}.Release|x64.Build.0 = Release|x64
+		{BDCE0AC5-B738-4900-8AA8-C2AD57EC47CD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BDCE0AC5-B738-4900-8AA8-C2AD57EC47CD}.Debug|Win32.Build.0 = Debug|Win32
+		{BDCE0AC5-B738-4900-8AA8-C2AD57EC47CD}.Debug|x64.ActiveCfg = Debug|x64
+		{BDCE0AC5-B738-4900-8AA8-C2AD57EC47CD}.Debug|x64.Build.0 = Debug|x64
+		{BDCE0AC5-B738-4900-8AA8-C2AD57EC47CD}.Release|Win32.ActiveCfg = Release|Win32
+		{BDCE0AC5-B738-4900-8AA8-C2AD57EC47CD}.Release|Win32.Build.0 = Release|Win32
+		{BDCE0AC5-B738-4900-8AA8-C2AD57EC47CD}.Release|x64.ActiveCfg = Release|x64
+		{BDCE0AC5-B738-4900-8AA8-C2AD57EC47CD}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{713C67A7-B1E2-4953-8BC3-0549B2C04030} = {D327BC59-D50C-44ED-8EBF-0944B8A781AF}
+		{BDCE0AC5-B738-4900-8AA8-C2AD57EC47CD} = {D327BC59-D50C-44ED-8EBF-0944B8A781AF}
+	EndGlobalSection
+EndGlobal
