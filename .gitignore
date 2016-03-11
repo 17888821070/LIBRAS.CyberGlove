@@ -29,6 +29,8 @@
 #Folders
 bin/
 x64/
+obj/
 
 #VS
 *.sdf
+*.suo
