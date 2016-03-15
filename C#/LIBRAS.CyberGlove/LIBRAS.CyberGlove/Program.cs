@@ -28,24 +28,37 @@ namespace LIBRAS.CyberGlove
 
         static string[,] ReadFile()
         {
-            string[] lines = File.ReadAllLines(@"C:\Users\hgtf\Desktop\LIBRAS.CyberGlove\C#\LIBRAS.CyberGlove\gesture.txt");
-            string[,] gestures = new string[lines.Length, QUANTITY_SENSORS];
+            string[] lines;
 
-            for(int i = 0; i < lines.Length; i++)
+            try
             {
-                string[] sensors = lines[i].Split(' ');
-                for (int j = 0; j < QUANTITY_SENSORS; j++)
+                lines = File.ReadAllLines(@"C:\LIBRAS.CyberGlove\gesture.txt");
+                string[,] gestures = new string[lines.Length, QUANTITY_SENSORS];
+
+                for (int i = 0; i < lines.Length; i++)
                 {
-                    gestures[i,j] = sensors[j];
+                    string[] sensors = lines[i].Split(' ');
+                    for (int j = 0; j < QUANTITY_SENSORS; j++)
+                    {
+                        gestures[i, j] = sensors[j];
+                    }
                 }
+
+                return gestures;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Gesture File Not Found");
+                Console.ReadKey();
+                Environment.Exit(0);
             }
 
-            return gestures;
+            return null;
         }
 
         static async Task InvokeRequestResponseService()
         {
-            Console.WriteLine("Detecting Gestures...");
+            Console.WriteLine("Detecting Gestures...\n");
 
             string[,] gestures = ReadFile();
 
@@ -115,6 +128,7 @@ namespace LIBRAS.CyberGlove
                     }
                 }
             }
+            Console.WriteLine("\nGesture Detection Complete");
             Console.ReadKey();
         }
     }
