@@ -1,0 +1,10 @@
+diff a/C#/LIBRAS.CyberGlove/LIBRAS.CyberGlove/Program.cs b/C#/LIBRAS.CyberGlove/LIBRAS.CyberGlove/Program.cs	(rejected hunks)
+@@ -49,7 +49,7 @@
+ 
+             string[,] gestures = ReadFile();
+ 
+-            for (int i = 0; i < (gestures.Length / 23); i++)
++            for (int i = 0; i < (gestures.Length / QUANTITY_SENSORS); i++)
+             {
+                 using (var client = new HttpClient())
+                 {
