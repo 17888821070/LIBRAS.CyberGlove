@@ -7,8 +7,8 @@
 using namespace std;
 using std::cout;
 
-int MAKE_A_GESTURE = 115;
-int END_GESTURES = 109;
+int SAVE_A_GESTURE = 115; // s
+int QUIT_GESTURES = 110;  // n
 int QUANTITY_SENSORS = 23;
 
 int main(int argc, char *argv[])
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	vhtCyberGlove *glove;
 	vhtIOConn *trackerDict;
 	vhtTracker *tracker;
-
+		
 	try
 	{
 		gloveDict = vhtIOConn::getDefault( vhtIOConn::glove );
@@ -41,45 +41,38 @@ int main(int argc, char *argv[])
 	vhtVector3d	position;
 	vhtQuaternion  orientation;
 	vhtVector3d	axis;
-	double baseT = glove->getLastUpdateTime();
+
+	ofstream file;
+	file.open("C:/LIBRAS.CyberGlove/gesture.txt");
 
 	while(true) {
-
 		glove->update();
 		tracker->update();
 
-		cout << "Make the Gesture\n\n";
+		for(int sensor = 0; sensor < QUANTITY_SENSORS; sensor++) {
+			cout << glove->getData(sensor) << " ";
+		}
+
+		cout << "\n\nSave Gesture?\n\n";
 
 		int character = getch();
 
-		ofstream file;
-
-		if(character == MAKE_A_GESTURE) {
-			file.open("gesture.txt");
-
-			for( int sensor = 0; sensor < QUANTITY_SENSORS; sensor++ ) {
+		if(character == SAVE_A_GESTURE) {
+			for(int sensor = 0; sensor < QUANTITY_SENSORS; sensor++) {
 				file << glove->getData(sensor);
-				cout << glove->getData(sensor);
 				
-				if(sensor != QUANTITY_SENSORS - 1) {
+				if(sensor < QUANTITY_SENSORS - 1) {
 					file << " ";
-					file.close();
+				} else {
+					file << "\n";
 				}
 			}
 
-		} else if(character == END_GESTURES) {
+		} else if(character == QUIT_GESTURES) {
 			file.close();
-			return 1;
-		}
-
-		for( int sensor = 0; sensor < QUANTITY_SENSORS; sensor++ ) {
-			file << glove->getData(sensor);
-			cout << glove->getData(sensor);
-				
-			if(sensor != QUANTITY_SENSORS - 1) {
-				file << " ";
-				file.close();
-			}
+			system("start C:\\LIBRAS.CyberGlove\\DetectGesture\\LIBRAS.CyberGlove.exe");
+			
+			return 0;
 		}
 
 		Sleep(100);
