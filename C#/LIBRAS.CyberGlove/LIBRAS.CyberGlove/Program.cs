@@ -11,7 +11,6 @@ using Newtonsoft.Json.Linq;
 
 namespace LIBRAS.CyberGlove
 {
-
     public class StringTable
     {
         public string[] ColumnNames { get; set; }
@@ -20,6 +19,8 @@ namespace LIBRAS.CyberGlove
 
     class Program
     {
+        static int QUANTITY_SENSORS = 23;
+
         static void Main(string[] args)
         {
             InvokeRequestResponseService().Wait();
@@ -28,12 +29,12 @@ namespace LIBRAS.CyberGlove
         static string[,] ReadFile()
         {
             string[] lines = File.ReadAllLines(@"C:\Users\hgtf\Desktop\LIBRAS.CyberGlove\C#\LIBRAS.CyberGlove\gesture.txt");
-            string[,] gestures = new string[lines.Length,23];
+            string[,] gestures = new string[lines.Length, QUANTITY_SENSORS];
 
             for(int i = 0; i < lines.Length; i++)
             {
                 string[] sensors = lines[i].Split(' ');
-                for (int j = 0; j < 23; j++)
+                for (int j = 0; j < QUANTITY_SENSORS; j++)
                 {
                     gestures[i,j] = sensors[j];
                 }
@@ -48,7 +49,7 @@ namespace LIBRAS.CyberGlove
 
             string[,] gestures = ReadFile();
 
-            for (int i = 0; i < (gestures.Length / 23); i++)
+            for (int i = 0; i < (gestures.Length / QUANTITY_SENSORS); i++)
             {
                 using (var client = new HttpClient())
                 {
