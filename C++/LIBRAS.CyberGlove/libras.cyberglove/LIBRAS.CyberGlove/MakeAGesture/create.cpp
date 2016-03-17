@@ -9,7 +9,7 @@ using std::cout;
 
 int SAVE_A_GESTURE = 115; // s
 int QUIT_GESTURES = 113;  // n
-int QUANTITY_SENSORS = 23;
+int QUANTITY_SENSORS = 22;
 
 int main(int argc, char *argv[])
 {

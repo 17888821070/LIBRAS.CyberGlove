@@ -8,7 +8,7 @@ using namespace std;
 using std::cout;
 
 int SAVE = 115;
-int QUANTITY_SENSORS = 23;
+int QUANTITY_SENSORS = 22;
 int QUANTITY_POSES = 10;
 
 int main(int argc, char *argv[])
