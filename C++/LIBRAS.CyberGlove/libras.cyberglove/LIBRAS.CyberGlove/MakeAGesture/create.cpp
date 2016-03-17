@@ -8,7 +8,7 @@ using namespace std;
 using std::cout;
 
 int SAVE_A_GESTURE = 115; // s
-int QUIT_GESTURES = 110;  // n
+int QUIT_GESTURES = 113;  // n
 int QUANTITY_SENSORS = 23;
 
 int main(int argc, char *argv[])
@@ -46,16 +46,16 @@ int main(int argc, char *argv[])
 	file.open("C:/LIBRAS.CyberGlove/gesture.txt");
 
 	while(true) {
+
+		cout << "Save gesture for detection?\n\n";
+		int character = getch();
+
 		glove->update();
 		tracker->update();
 
 		for(int sensor = 0; sensor < QUANTITY_SENSORS; sensor++) {
 			cout << glove->getData(sensor) << " ";
 		}
-
-		cout << "\n\nSave Gesture?\n\n";
-
-		int character = getch();
 
 		if(character == SAVE_A_GESTURE) {
 			for(int sensor = 0; sensor < QUANTITY_SENSORS; sensor++) {
@@ -65,6 +65,7 @@ int main(int argc, char *argv[])
 					file << " ";
 				} else {
 					file << "\n";
+					cout << "\n\nGesture saved!\n\n";
 				}
 			}
 
@@ -73,6 +74,8 @@ int main(int argc, char *argv[])
 			system("start C:\\LIBRAS.CyberGlove\\DetectGesture\\LIBRAS.CyberGlove.exe");
 			
 			return 0;
+		} else {
+			cout << "\n\nGesture not saved!\n\n";
 		}
 
 		Sleep(100);
