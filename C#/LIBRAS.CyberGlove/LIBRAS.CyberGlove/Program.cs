@@ -19,7 +19,7 @@ namespace LIBRAS.CyberGlove
 
     class Program
     {
-        static int QUANTITY_SENSORS = 23;
+        static int QUANTITY_SENSORS = 22;
 
         static void Main(string[] args)
         {
@@ -73,7 +73,7 @@ namespace LIBRAS.CyberGlove
                                 "input1", 
                                 new StringTable() 
                                 {
-                                    ColumnNames = new string[] {"I01", "I02", "I03", "I04", "I05", "I06", "I07", "I08", "I09", "I10", "I11", "I12", "I13", "I14", "I15", "I16", "I17", "I18", "I19", "I20", "I21", "I22", "I23", "Y"},
+                                    ColumnNames = new string[] {"S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S10", "S11", "S12", "S13", "S14", "S15", "S16", "S17", "S18", "S19", "S20", "S21", "S22", "OUTPUT"},
                                     Values = new string[,] { { gestures[i, 0],
                                                                gestures[i, 1],
                                                                gestures[i, 2],
@@ -96,7 +96,6 @@ namespace LIBRAS.CyberGlove
                                                                gestures[i, 19],
                                                                gestures[i, 20],
                                                                gestures[i, 21],
-                                                               gestures[i, 22],
                                                                ""}, }
                                 }
                             },
@@ -104,9 +103,9 @@ namespace LIBRAS.CyberGlove
                         GlobalParameters = new Dictionary<string, string>() { }
                     };
 
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "JKh0CGa3HIRr6I/X86hgZScBGDeoznHKHwqW2Opi4d7xLq1A/jYyQ8g0PMOUuFDyX1fhJmOBmXy2LoT6NffRXw==");
-                    client.BaseAddress = new Uri("https://ussouthcentral.services.azureml.net/workspaces/5e87c662fc5c4ed7880a99176ae465ae/services/3240df9bf131423993ccd01734f8e1e8/execute?api-version=2.0&details=true");
-
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "V9lbEZwQoj37OwWY5uK1/q6cU67LNlhSMXM8znmTXrtSvGycaq/gvBl1W55GBq9l8Gladiwungu34uJ1RSeMbg==");
+                    client.BaseAddress = new Uri("https://ussouthcentral.services.azureml.net/workspaces/080e77d298664162a44a8e3f1377dfc6/services/44ec08620cb24e7cac1ea7782faa0b28/execute?api-version=2.0&details=true");
+                    
                     HttpResponseMessage response = await client.PostAsJsonAsync("", scoreRequest);
                     if (response.IsSuccessStatusCode)
                     {
