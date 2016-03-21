@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 	vhtVector3d	axis;
 
 	ofstream file;
-	file.open("C:/LIBRAS.CyberGlove/gesture.txt");
+	file.open("C:/LIBRAS.CyberGlove/gestures.txt");
 
 	while(true) {
 
