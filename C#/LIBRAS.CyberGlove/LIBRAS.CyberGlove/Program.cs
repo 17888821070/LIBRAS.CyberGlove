@@ -32,7 +32,7 @@ namespace LIBRAS.CyberGlove
 
             try
             {
-                lines = File.ReadAllLines(@"C:\LIBRAS.CyberGlove\gesture.txt");
+                lines = File.ReadAllLines(@"C:\LIBRAS.CyberGlove\gestures.txt");
                 string[,] gestures = new string[lines.Length, QUANTITY_SENSORS+1];
 
                 for (int i = 0; i < lines.Length; i++)
