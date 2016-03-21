@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
 
 		} else if(character == QUIT_GESTURES) {
 			file.close();
-			system("start C:\\LIBRAS.CyberGlove\\DetectGesture\\LIBRAS.CyberGlove.exe");
+			system("start C:\\LIBRAS.CyberGlove\\DetectGestures\\LIBRAS.CyberGlove.exe");
 			
 			return 0;
 		} else {
